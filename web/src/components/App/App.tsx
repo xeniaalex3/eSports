@@ -110,10 +110,19 @@ function App() {
                   <input type="checkbox" />
                   Costumo me conectar ao chat de voz
                 </div>
-                <footer className='mt-4 flex justify-end gap-4'>
-                  <button className='bg-zinc-500 px-5 h-12 rounded-md font-semibold'>Cancelar</button>
-                  <button type='submit' className=''>
-                    <GameController />
+                <footer className='mt-4 flex justify-between gap-4'>
+                  <Dialog.Close
+                  className='bg-zinc-500 px-5 h-12 rounded-md font-semibold hover:bg-zinc-600'
+                  type='button'
+                  >
+                  Cancelar
+                  </Dialog.Close>
+                  <button 
+                  type='submit' 
+                  className='bg-violet-500 px-5 h-12 rounded-md font-semibold flex items-center gap-3 hover:bg-violet-600'
+                  
+                  >
+                    <GameController size={24}/>
                     Encontrar duo
                   </button>
                 </footer>
