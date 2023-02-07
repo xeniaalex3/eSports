@@ -10,9 +10,6 @@ import '../../styles/main.css'
 // import images and logo
 import logo from '../../assets/logo.svg'
 
-
-
-
 interface Game {
   id: string
   title: string
@@ -37,9 +34,9 @@ function App() {
     <div className="max-w-[1344px] mx-auto flex flex-col items-center my-20">
       <img src={logo} alt="logo" />
       <h1 className="text-6xl text-white font-black mt-20">
-        Seu{' '}
+      Your{' '}
         <span className=" text-transparent bg-gradient bg-clip-text">duo</span>{' '}
-        está aqui.
+        is here.
       </h1>
 
       <div className="grid grid-cols-6 gap-6 mt-16">

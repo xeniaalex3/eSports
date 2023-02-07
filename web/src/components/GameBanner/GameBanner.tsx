@@ -13,7 +13,7 @@ export function GameBanner(props: GameBannerProps) {
         <strong className="font-bold text-white block">
           {props.title}
         </strong>
-        <span className="text-zinc-300 text-sm block mt-1">{props.adsCount} anuncio(s)</span>
+        <span className="text-zinc-300 text-sm block mt-1">{props.adsCount} ad(s)</span>
       </div>
     </a>
   )

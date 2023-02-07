@@ -30,17 +30,17 @@ export function CreateAdModal() {
       <Dialog.Overlay className="bg-black/60 inset-0 fixed" />
       <Dialog.Content className="fixed bg-[#2A2634] py-8 px-10 text-white top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-lg w-[480px] shadow-lg shadow-black/25">
         <Dialog.Title className="text-3xl font-black">
-          Publique um anuncio
+        Publish an ad
         </Dialog.Title>
 
         <form className='mt-8 flex flex-col gap-4'>
           <div className="flex flex-col gap-2">
-            <label htmlFor="game" className="font-semibold">Qual o game?</label>
+            <label htmlFor="game" className="font-semibold">Which game?</label>
             <select 
             id='game' 
             className='bg-zinc-900 py-3 px-4 rounded text-sm placeholder:text-zinc-500'
             >
-            <option disabled selected value="">Selecione o game que deseja jogar</option>
+            <option disabled selected value="">Select the game you want to play</option>
 
             {games.map(game => {
               return (
@@ -51,25 +51,25 @@ export function CreateAdModal() {
           </div>
 
           <div className='flex flex-col gap-2 mt-3'>
-            <label htmlFor="name" className="font-semibold">Seu nome (ou nickname)</label>
+            <label htmlFor="name" className="font-semibold">Your name (or nickname)</label>
             <Input id='name' placeholder='Como te chamam dentro do game?' />
           </div>
 
           <div className='grid grid-cols-2 gap-6'>
             <div className='flex flex-col gap-2'>
-              <label htmlFor="yearsPlaying" className='font-semibold'>Joga hà quantos anos?</label>
+              <label htmlFor="yearsPlaying" className='font-semibold'>How many years have you been playing?</label>
               <Input id='yearsPlaying' placeholder='Tudo bem ser ZERO' type="number" />
             </div>
 
             <div className='flex flex-col gap-2'>
-              <label htmlFor="discord">Qual seu Discord?</label>
+              <label htmlFor="discord">What is your Discord?</label>
               <Input id='discord' placeholder='Usuario#0000' type="text" />
             </div>
           </div>
 
           <div className='flex gap-6'>
             <div className='flex flex-col gap-2'>
-              <label htmlFor="weekDays">Quando costuma jogar?</label>
+              <label htmlFor="weekDays">When do you usually play?</label>
               <div className='grid grid-cols-4 gap-2'>
                 <button className='w-8 h-8 rounded bg-zinc-900' title='Segunda'>S</button>
                 <button className='w-8 h-8 rounded bg-zinc-900' title='Terça'>T</button>
@@ -81,7 +81,7 @@ export function CreateAdModal() {
               </div>
             </div>
             <div className='flex flex-col gap-2 flex-1'>
-              <label htmlFor="hourStart">Qual horario do dia?</label>
+              <label htmlFor="hourStart">What time of day?</label>
               <div className='grid grid-cols-2 gap-2'>
                 <input id="hourStart" type="time" placeholder='De' />
                 <input id="hourEnd" type="time" placeholder='Ate' />
@@ -94,14 +94,14 @@ export function CreateAdModal() {
               <Check className='w-4 h-4 text-emerald-400'/>
             </Checkbox.Indicator>
            </Checkbox.Root>
-            Costumo me conectar ao chat de voz
+           I usually connect to voice chat
           </div>
           <footer className='mt-4 flex justify-between gap-4'>
             <Dialog.Close
               className='bg-zinc-500 px-5 h-12 rounded-md font-semibold hover:bg-zinc-600'
               type='button'
             >
-              Cancelar
+              Cancel
             </Dialog.Close>
             <button
               type='submit'
@@ -109,7 +109,7 @@ export function CreateAdModal() {
 
             >
               <GameController size={24} />
-              Encontrar duo
+              Find duo
             </button>
           </footer>
         </form>
