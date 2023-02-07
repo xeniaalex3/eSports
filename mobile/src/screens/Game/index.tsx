@@ -28,6 +28,7 @@ const [duos, setDuos] = useState<DuoCardProps[]>([]);
 navigation.goBack();
   };
 
+  
   useEffect(() => {
     fetch(`http://192.168.0.32:3333/games/${game.id}/ads`)
       .then(response => response.json())
