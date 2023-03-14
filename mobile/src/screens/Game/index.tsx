@@ -8,6 +8,7 @@ import { THEME } from '../../theme'
 import { Heading } from '../../components/Heading'
 import { Background } from '../../components/Background'
 import { DuoCard, DuoCardProps } from '../../components/DuoCard'
+import { DuoMatch } from '../../components/DuoMatch'
 
 // styles and images(logo)
 import logoImg from '../../assets/logo-nlw-esports.png'
@@ -16,6 +17,7 @@ import { styles } from './styles'
 
 export function Game() {
 const [duos, setDuos] = useState<DuoCardProps[]>([]);
+const [discordDuoSelected, setDiscordDuoSelected] = useState('rodrigo#2323');
 
   // react-navigation
   const route = useRoute();
@@ -61,7 +63,7 @@ navigation.goBack();
 
         <Heading 
         title={game.title}
-        subtitle='Conecte-se e comece a jogar!'
+        subtitle='Login and start playing!'
         />
         
         <FlatList 
@@ -79,12 +81,16 @@ navigation.goBack();
         showsVerticalScrollIndicator={false}
         ListEmptyComponent={() => (
           <Text style={styles.emptyListText}>
-            Nao ha anuncios publicados ainda.
+            There are no ads published yet.
           </Text>
         )}
         />
         
-
+<DuoMatch
+visible={discordDuoSelected.length > 0}
+discord='rodrigo#1312'
+onClose={() => setDiscordDuoSelected('')}
+/>
       </SafeAreaView>
     </Background>
   )

@@ -24,23 +24,23 @@ export function DuoCard({ data, onConnect }: Props) {
   return (
     <View style={styles.container}>
 <DuoInfo 
-label="Nome"
+label="Name"
 value={data.name}
 />
 
 <DuoInfo 
-label="Tempo de jogo"
-value={`${data.yearsPlaying} anos`}
+label="Playing Time"
+value={`${data.yearsPlaying} years`}
 />
 
 <DuoInfo 
-label="Disponibilidade"
-value={`${data.weekDays.length} dias \u2022 ${data.hourStart} - ${data.hourEnd}`}
+label="Availability"
+value={`${data.weekDays.length} days \u2022 ${data.hourStart} - ${data.hourEnd}`}
 />
 
 <DuoInfo 
-label="Chamada de audio?"
-value={data.useVoiceChannel ? 'Sim' : 'Nao'}
+label="Audio call?"
+value={data.useVoiceChannel ? 'Yes' : 'No'}
 colorValue={data.useVoiceChannel ? THEME.COLORS.SUCCESS : THEME.COLORS.ALERT}
 />
 
@@ -57,7 +57,7 @@ onPress={onConnect}
  <Text 
  style={styles.buttonTitle}
  >
-  Conectar
+ Connect
  </Text>
 
 </TouchableOpacity>

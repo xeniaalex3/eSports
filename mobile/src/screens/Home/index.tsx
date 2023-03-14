@@ -29,8 +29,8 @@ export function Home() {
       <SafeAreaView style={styles.container}>
         <Image source={logoImg} style={styles.logo} />
         <Heading
-          title="Encontre seu duo!"
-          subtitle="Selecione o game que deseja jogar..."
+          title="Find your duo!"
+          subtitle="Select the game you want to play..."
         />
 
         <FlatList
