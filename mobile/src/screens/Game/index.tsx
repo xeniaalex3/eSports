@@ -17,7 +17,7 @@ import { styles } from './styles'
 
 export function Game() {
 const [duos, setDuos] = useState<DuoCardProps[]>([]);
-const [discordDuoSelected, setDiscordDuoSelected] = useState('rodrigo#2323');
+const [discordDuoSelected, setDiscordDuoSelected] = useState('');
 
   // react-navigation
   const route = useRoute();
@@ -30,7 +30,13 @@ const [discordDuoSelected, setDiscordDuoSelected] = useState('rodrigo#2323');
 navigation.goBack();
   };
 
-  
+  async function getDiscordUser(adsId:string) {
+    fetch(`http://192.168.0.32:3333/ads/${adsId}/discord`)
+    .then(response => response.json())
+    .then(data => setDiscordDuoSelected(data.discord));
+  }
+
+
   useEffect(() => {
     fetch(`http://192.168.0.32:3333/games/${game.id}/ads`)
       .then(response => response.json())
@@ -72,7 +78,7 @@ navigation.goBack();
         renderItem={({item}) => (
           <DuoCard 
           data={item} 
-          onConnect={() => { }}
+          onConnect={() => getDiscordUser(item.id)}
           />
         )}
         horizontal
@@ -88,7 +94,7 @@ navigation.goBack();
         
 <DuoMatch
 visible={discordDuoSelected.length > 0}
-discord='rodrigo#1312'
+discord={discordDuoSelected}
 onClose={() => setDiscordDuoSelected('')}
 />
       </SafeAreaView>

@@ -26,6 +26,16 @@ export const styles = StyleSheet.create({
     marginTop: 24,
     marginBottom: 8
   },
+  discordButton: {
+    width: 231,
+    height: 48,
+    backgroundColor: THEME.COLORS.BACKGROUND_900,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom: 32,
+    borderRadius: 4,
+    marginTop: 20
+  },
   discord: {
     color: THEME.COLORS.TEXT,
     fontSize: THEME.FONT_SIZE.MD,
