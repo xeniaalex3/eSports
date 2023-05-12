@@ -25,7 +25,7 @@ function App() {
   const [games, setGames] = useState<Game[]>([])
 
   useEffect(() => {
-    axios(`${api}/games`)
+    axios.get(`${api}/games`)
       .then(response => {
         setGames(response.data)
       })

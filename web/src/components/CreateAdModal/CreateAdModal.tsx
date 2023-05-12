@@ -23,6 +23,7 @@ export function CreateAdModal() {
   useEffect(() => {
     axios.get(`${api}/games`).then(response => {
       setGames(response.data)
+      console.log(response.data);
     })
   }, [])
 
