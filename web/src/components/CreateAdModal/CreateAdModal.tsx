@@ -5,6 +5,7 @@ import * as ToggleGroup from '@radix-ui/react-toggle-group'
 import { Input } from '../Form/Input'
 import { useEffect, useState, FormEvent } from 'react'
 import axios from 'axios'
+import { api } from '../../services/api'
 
 interface Game {
   id: string
@@ -20,7 +21,7 @@ export function CreateAdModal() {
   console.log(useVoiceChannel)
 
   useEffect(() => {
-    axios('http://localhost:3333/games').then(response => {
+    axios.get(`${api}/games`).then(response => {
       setGames(response.data)
     })
   }, [])
@@ -37,7 +38,7 @@ console.log(data);
     }
 
     try {
-      await axios.post(`http://localhost:3333/games/${data.game}/ads`, {
+      await axios.post(`${api}/games/${data.game}/ads`, {
         name: data.name,
         yearsPlaying: Number(data.yearsPlaying),
         discord: data.discord,

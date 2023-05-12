@@ -4,6 +4,7 @@ import { GameBanner } from '../GameBanner/GameBanner'
 import { CreateAdBanner } from '../CreateAdBanner/CreateAdBanner'
 import { CreateAdModal } from '../CreateAdModal/CreateAdModal'
 import axios from 'axios'
+import { api } from '../../services/api'
 
 
 import '../../styles/main.css'
@@ -24,7 +25,7 @@ function App() {
   const [games, setGames] = useState<Game[]>([])
 
   useEffect(() => {
-    axios('http://localhost:3333/games')
+    axios(`${api}/games`)
       .then(response => {
         setGames(response.data)
       })
