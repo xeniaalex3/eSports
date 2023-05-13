@@ -21,11 +21,14 @@ export function CreateAdModal() {
   console.log(useVoiceChannel)
 
   useEffect(() => {
-    axios.get(`${api}/games`).then(response => {
-      setGames(response.data)
-      console.log(response.data);
-    })
-  }, [])
+    axios.get(`${api}/games`).then(({ data }) => {
+      setGames(data);
+      console.log(data);
+    }).catch(error => {
+      console.error('Error:', error);
+    });
+  
+  }, []);
 
   async function handleCreateAd(event: FormEvent) {
     event.preventDefault()
