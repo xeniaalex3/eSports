@@ -3,23 +3,21 @@ import * as Dialog from '@radix-ui/react-dialog'
 import * as Checkbox from '@radix-ui/react-checkbox'
 import * as ToggleGroup from '@radix-ui/react-toggle-group'
 import { Input } from '../Form/Input'
-import { useEffect, useState, FormEvent } from 'react'
-import axios from 'axios'
-import { api } from '../../services/api'
+import { useState, FormEvent } from 'react'
+import { games } from '../../services/games'
 
 interface Game {
   id: string
-  title: string
+  name: string
 }
 
 export function CreateAdModal() {
-  const [games, setGames] = useState<Game[]>([])
   const [weekDays, setWeekDays] = useState<string[]>([])
   const [useVoiceChannel, setUseVoiceChannel] = useState(false)
 
   console.log(weekDays)
   console.log(useVoiceChannel)
-
+/*
   useEffect(() => {
     axios.get(`${api}/games`).then(({ data }) => {
       setGames(data);
@@ -28,7 +26,7 @@ export function CreateAdModal() {
       console.error('Error:', error);
     });
   
-  }, []);
+  }, []);*/
 
   async function handleCreateAd(event: FormEvent) {
     event.preventDefault()
@@ -41,21 +39,6 @@ console.log(data);
       return;
     }
 
-    try {
-      await axios.post(`${api}/games/${data.game}/ads`, {
-        name: data.name,
-        yearsPlaying: Number(data.yearsPlaying),
-        discord: data.discord,
-        weekDays: weekDays.map(Number),
-        hourStart: data.hourStart,
-        hourEnd: data.hourEnd,
-        useVoiceChannel: Boolean(data.useVoiceChannel),
-      })
-      alert('ad created!')
-    } catch (err) {
-      console.log(err);
-      alert('err')
-    }
   }
 
   return (
@@ -77,14 +60,14 @@ console.log(data);
               className="bg-zinc-900 py-3 px-4 rounded text-sm placeholder:text-zinc-500"
               defaultValue=""
             >
-              <option disabled value="">
+              <option value="">
                 Select the game you want to play
               </option>
 
               {games.map(game => {
                 return (
                   <option key={game.id} value={game.id}>
-                    {game.title}
+                    {game.name}
                   </option>
                 )
               })}

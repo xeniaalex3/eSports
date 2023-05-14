@@ -1,10 +1,8 @@
-import { useState, useEffect } from 'react'
 import * as Dialog from '@radix-ui/react-dialog'
 import { GameBanner } from '../GameBanner/GameBanner'
 import { CreateAdBanner } from '../CreateAdBanner/CreateAdBanner'
 import { CreateAdModal } from '../CreateAdModal/CreateAdModal'
-import axios from 'axios'
-import { api } from '../../services/api'
+import { games } from '../../services/games'
 
 
 import '../../styles/main.css'
@@ -14,22 +12,13 @@ import logo from '../../assets/logo.svg'
 
 interface Game {
   id: string
-  title: string
-  bannerUrl: string
-  _count: {
-    ads: number
-  }
+  name: string
+  cover: string
+  ads: string
+  
 }
 
 function App() {
-  const [games, setGames] = useState<Game[]>([])
-
-  useEffect(() => {
-    axios.get(`${api}/games`)
-      .then(response => {
-        setGames(response.data)
-      })
-  }, [])
 
   return (
     <div className="max-w-[1344px] mx-auto flex flex-col items-center my-20">
@@ -45,9 +34,9 @@ function App() {
           return (
             <GameBanner
               key={game.id}
-              bannerUrl={game.bannerUrl}
-              title={game.title}
-              adsCount={game._count.ads}
+              cover={game.cover}
+              name={game.name}
+              ads={game.ads}
             />
           )
         })}
