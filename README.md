@@ -7,8 +7,6 @@ The project is called Find your Duo. It is a platform to find the perfect partne
 <img height='80%' width='80%' src="./assets/img/app-layout.png" alt="Next Level Week Esports Logo"/></p>
 
 ## Stack and tools
-* [Node.js](https://nodejs.org/en/)
-* [Prisma](https://www.prisma.io/)
 * [React](https://reactjs.org/)
 * [React Native](https://reactnative.dev/)
 * [Expo](https://expo.dev/)
