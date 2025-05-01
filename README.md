@@ -1,6 +1,5 @@
 # eSports
 
-## Description
 The project is called Find your Duo. It is a platform to find the perfect partner to play your favorite game together, by connecting your Twitch.tv account.
 
 <p align="center">
