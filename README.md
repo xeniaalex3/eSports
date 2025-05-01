@@ -6,9 +6,18 @@ The project is called Find your Duo. It is a platform to find the perfect partne
 <p align="center">
 <img height='80%' width='80%' src="./assets/img/app-layout.png" alt="Next Level Week Esports Logo"/></p>
 
-## Stack and tools
-* [React](https://reactjs.org/)
-* [React Native](https://reactnative.dev/)
-* [Expo](https://expo.dev/)
-* [Figma](https://www.figma.com/)
-* [Radix UI](https://www.radix-ui.com/)
+## 🚀 Technologies
+- ⚛️ React
+- 📱 React Native
+- 🚀 Expo 
+- 🎨 Figma 
+- 🧩 Radix UI
+
+## 🧰 Features
+-  Modern, component-based UI architecture
+- Fully responsive and utility-first styling system,
+- Accessible and customizable UI components
+- Responsive slider/carousel for interactive content display
+- Seamless integration with external APIs via HTTP requests
+- Icon-based visual enhancements for improved UX
+- Optimized build pipeline for performance and code splitting
